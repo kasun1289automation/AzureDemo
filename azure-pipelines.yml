@@ -8,7 +8,7 @@ trigger:
 
 jobs:
 
-- job: 'Test and Publish Result'
+- job: 'Test'
   pool:
     # vmImage: ubuntu-latest
     vmImage: 'vs2017-win2016'
