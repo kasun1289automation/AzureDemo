@@ -8,7 +8,7 @@ trigger:
 
 jobs:
 
-- job: 'Test'
+- job: 'Test & Publish Results'
   pool:
     # vmImage: ubuntu-latest
     vmImage: 'vs2017-win2016'
@@ -22,8 +22,10 @@ jobs:
     inputs:
       versionSpec: '$(python.version)'
       architecture: 'x64'
+
   - script: pip install robotframework robotframework-seleniumlibrary && npm install chromedriver
     displayName: 'Install dependencies'
+
   - powershell: robot --pythonpath . -x outputxunit.xml TestCases.robot
     displayName: 'Run Robot Scripts'
 
