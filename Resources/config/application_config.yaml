@@ -1,0 +1,7 @@
+app_url: https://saucedemo.com/
+browser: chrome
+headless: false
+
+# app users
+username: standard_user
+password: secret_sauce

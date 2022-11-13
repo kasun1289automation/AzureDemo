@@ -1,18 +1,13 @@
 *** Settings ***
-Library     RequestsLibrary
-Library    Collections
+Resource    ../Resources/BaseTestAPI.robot
 
 *** Variables ***
-${base_url}    https://demoqa.com
 ${bookstore}    /BookStore/v1/Books
 
 *** Test Cases ***
 Get_BookStore_Info
-    Create Session    mySession    ${base_url}
-    ${response}=    GET On Session    mySession    ${bookstore}
-    # Log To Console    ${response.status_code}
-    # Log To Console    ${response.content}
-    # Log To Console    ${response.headers}
+    ${response}=    Call Get Request    ${HEADERS}    ${BASE_URL}    ${bookstore}
+    
 
     #validations
     ${status_code}=    Convert To String    ${response.status_code}
