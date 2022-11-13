@@ -1,1 +1,4 @@
 
+robotframework
+robotframework-requests
+pyyaml
