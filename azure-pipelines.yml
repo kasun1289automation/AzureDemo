@@ -17,7 +17,7 @@ jobs:
         python.version: '3.7'
 
   steps:
-  - task: Robot Test #UsePythonVersion@0
+  - task: UsePythonVersion@0
     inputs:
       versionSpec: '$(python.version)'
       architecture: 'x64'
